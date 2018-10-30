@@ -74,3 +74,8 @@ You can see all collected summaries in tensorboard by running
 ```
 tensorboard --logdir ./experiments
 ```
+
+Feel free re-use, extend or adapt for your own purposes!
+
+# Author
+Martin Müller (martin.muller@epfl.ch)
