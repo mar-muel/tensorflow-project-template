@@ -9,6 +9,10 @@ class ExampleModel(BaseModel):
         self.init_saver()
 
     def build_model(self):
+        """
+        Build model architecture, implement loss function
+        """
+        # Define shape of input data
         self.is_training = tf.placeholder(tf.bool)
         self.x = tf.placeholder(tf.float64, shape=[None, 4])
         self.y = tf.placeholder(tf.int64, shape=[None, 3])
@@ -27,6 +31,9 @@ class ExampleModel(BaseModel):
         self.predictions = tf.nn.softmax(d2)
 
     def init_saver(self):
+        """
+        Initialize model saver
+        """
         # here you initialize the tensorflow saver that will be used in saving the checkpoints.
         self.saver = tf.train.Saver(max_to_keep=self.config.max_to_keep)
 

@@ -11,6 +11,11 @@ class ExampleTrainer(BaseTrain):
         self.logger = logging.getLogger(__name__)
 
     def train_epoch(self):
+        """
+       implements the logic of epoch:
+       -loop on the number of iterations in the config and call the train step
+       -add any summaries you want using the summary
+        """
         losses = []
         accs = []
         self.sess.run(self.data.train_init, feed_dict={ self.data.batch_size: self.config.batch_size})
@@ -32,6 +37,11 @@ class ExampleTrainer(BaseTrain):
         self.model.save(self.sess)
 
     def train_step(self):
+        """
+       implements the logic of the train step
+       - run the tensorflow session
+       - return any metrics you need to summarize
+       """
         features, labels = self.sess.run(self.data.next_batch)
         feed_dict = {self.model.is_training: True, self.model.x: features, self.model.y: labels}
         _, loss, acc = self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
