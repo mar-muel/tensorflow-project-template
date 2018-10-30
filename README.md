@@ -1,2 +1,3 @@
-# tensorflow-project-template
-Project template for tensorflow
+# Tensorflow Project Template
+
+Some more info soon to follow

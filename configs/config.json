@@ -1,0 +1,21 @@
+{
+  "experiments": {
+    "run1": {
+      "learning_rate": 1e-4
+    },
+    "run2": {
+      "learning_rate": 1e-5
+    }
+  },
+  "global_params": {
+    "training_data": "train.csv",
+    "test_data": "test.csv",
+    "learning_rate": 1e-4,
+    "max_to_keep": 1,
+    "num_epochs": 4,
+    "num_iter_per_epoch": 1000,
+    "batch_size": 10,
+    "run_test": true,
+    "delete_previous_output": true
+  }
+}
