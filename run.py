@@ -1,6 +1,7 @@
 import os
 import logging
 import logging.config
+import coloredlogs
 import tensorflow as tf
 from utils.config_handler import ConfigHandler
 from utils.summary_logger import SummaryLogger
@@ -55,6 +56,7 @@ def main():
 def configure_logging():
     config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'utils', 'config', 'logging.conf')
     logging.config.fileConfig(fname=config_path, disable_existing_loggers=False)
+    coloredlogs.install(level='DEBUG')
 
 
 if __name__ == '__main__':
